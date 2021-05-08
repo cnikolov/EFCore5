@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryApp.API", "InventoryApp.API\InventoryApp.API.csproj", "{2E0AADB0-51DB-4812-BD4E-E923493D292B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E0AADB0-51DB-4812-BD4E-E923493D292B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0AADB0-51DB-4812-BD4E-E923493D292B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0AADB0-51DB-4812-BD4E-E923493D292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0AADB0-51DB-4812-BD4E-E923493D292B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4802FB21-EA51-4450-8511-DECCF293E259}
+	EndGlobalSection
+EndGlobal
