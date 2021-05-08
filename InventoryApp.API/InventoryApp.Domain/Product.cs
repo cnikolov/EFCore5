@@ -10,5 +10,6 @@ namespace InventoryApp.Domain
         public double Price { get; set; }
         public int SupplierId { get; set; }
         public List<Quote> Quotes { get; set; }
+        public List<Marketplace> Marketplaces { get; set; }
     }
 }

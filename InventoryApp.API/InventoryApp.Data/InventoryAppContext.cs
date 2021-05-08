@@ -10,6 +10,8 @@ namespace InventoryApp.Data
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Quote> Quotes { get; set; }
+        public DbSet<Marketplace> Marketplaces { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connectionString = "Data Source= MSI\\SQLEXPRESS; Initial Catalog=InventoryAppData; User=sa; Password=test";
