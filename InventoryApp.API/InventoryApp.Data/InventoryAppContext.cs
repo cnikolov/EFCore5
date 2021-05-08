@@ -21,6 +21,14 @@ namespace InventoryApp.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Product>()
+                .HasMany(m => m.Marketplaces)
+                .WithMany(p => p.Products)
+                .UsingEntity<MarketplaceProduct>
+                (mp=> mp.HasOne<Marketplace>().WithMany(), 
+                    mp => mp.HasOne<Product>().WithMany())
+                .Property(mp => mp.DateListed)
+                .HasDefaultValueSql("getdate()");
             base.OnModelCreating(modelBuilder);
         }
     }

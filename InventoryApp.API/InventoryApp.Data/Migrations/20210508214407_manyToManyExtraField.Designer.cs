@@ -4,44 +4,22 @@ using InventoryApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace InventoryApp.Data.Migrations
 {
     [DbContext(typeof(InventoryAppContext))]
-    partial class InventoryAppContextModelSnapshot : ModelSnapshot
+    [Migration("20210508214407_manyToManyExtraField")]
+    partial class manyToManyExtraField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("InventoryApp.Domain.Comission", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("CommisionRate")
-                        .HasColumnType("float");
-
-                    b.Property<int>("MarketplaceId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MarketplaceId")
-                        .IsUnique();
-
-                    b.ToTable("Comission");
-                });
 
             modelBuilder.Entity("InventoryApp.Domain.Marketplace", b =>
                 {
@@ -140,15 +118,6 @@ namespace InventoryApp.Data.Migrations
                     b.ToTable("Suppliers");
                 });
 
-            modelBuilder.Entity("InventoryApp.Domain.Comission", b =>
-                {
-                    b.HasOne("InventoryApp.Domain.Marketplace", null)
-                        .WithOne("Comission")
-                        .HasForeignKey("InventoryApp.Domain.Comission", "MarketplaceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("InventoryApp.Domain.MarketplaceProduct", b =>
                 {
                     b.HasOne("InventoryApp.Domain.Marketplace", null)
@@ -173,11 +142,6 @@ namespace InventoryApp.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
-                });
-
-            modelBuilder.Entity("InventoryApp.Domain.Marketplace", b =>
-                {
-                    b.Navigation("Comission");
                 });
 
             modelBuilder.Entity("InventoryApp.Domain.Product", b =>
